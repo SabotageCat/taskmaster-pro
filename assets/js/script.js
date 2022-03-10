@@ -290,6 +290,13 @@ var auditTask = function(taskEl) {
   }
 };
 
+//function to refresh audit every 30 min
+setInterval(function () {
+  $(".card .list-group-item").each(function(index, el) {
+    auditTask(el);
+  });
+}, (1000 * 60) * 30);
+
 // load tasks for the first time
 loadTasks();
 
